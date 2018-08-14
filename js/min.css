@@ -1,9 +1,18 @@
 .main{
 	display:block;
+	padding: 0 10%;
+}
+.input{
+	text-align: center;
 	margin:0 auto;
 }
+.output{
+	text-align: center;
+	margin:0 auto;
+
+}
 .text-area{
-	width:9pm;
+	width:10pm;
 	height:3pm;
 	resize: none;
 }
