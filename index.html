@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <title>支离破碎的思考·发言</title>
+	<link rel="stylesheet" type="text/css" href="js/min.css">
+</head>
+<body>
+<header>
+<h3 id='tips'>右击图片另存为</h3>
+</header>
+<div class="main">
+	<textarea id="target-str" rows="3" cols="18" class="text-area" placeholder="在这里输入" autofocus draggable="false">我四十岁跟我叫别人小姐姐有关系吗</textarea>
+	<input id="generate" type="button" value="生成" onclick="drawText(strCvs,250,70,270)"/>
+	<canvas id="myCanvas" width="600" height="358" class="img">
+		Your browser does not support the canvas element.
+	</canvas>
+</div>
+
+<script type="text/javascript">
+	var c=document.getElementById("myCanvas");
+	var btn=document.getElementById("generate");
+	var strCvs = document.getElementById("target-str").innerHTML;
+	var cxt=c.getContext("2d");
+	var img=new Image();
+	img.src="imgs/template.jpg";
+	img.onload = function() {
+		cxt.drawImage(img,0,0);
+	}
+	function drawText(t,x,y,w)
+	{
+	
+    var chr = t.split("");
+    var temp = "";              
+    var row = [];
+	cxt.drawImage(img,0,0);
+    cxt.font = "30px 微软雅黑";
+    cxt.fillStyle = "black";
+    cxt.textBaseline = "middle";
+
+    for(var a = 0; a < chr.length; a++){
+        if( cxt.measureText(temp).width < w ){
+            ;
+        }
+        else{
+            row.push(temp);
+            temp = "";
+        }
+        temp += chr[a];
+    }
+
+    row.push(temp);
+
+    for(var b = 0; b < row.length; b++){
+        cxt.fillText(row[b],x,y+(b+1)*30);
+    }
+	}
+</script>
+</body>
+</html>

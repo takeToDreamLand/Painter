@@ -1,0 +1,13 @@
+.main{
+	display:block;
+	margin:0 auto;
+}
+.text-area{
+	width:9pm;
+	height:3pm;
+	resize: none;
+}
+#tips{
+	display:block;
+	text-align: center;
+}
